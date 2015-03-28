@@ -6,27 +6,27 @@ using namespace std;
 string RemoveExtraSpaces(const string &arg)
 {
 	string newString = "";
-	int lastIndex = arg.length() - 1;
-	while (lastIndex >= 0 && arg[lastIndex] == ' ')
+	size_t lastIndex = arg.find_last_not_of(' ');
+	if (lastIndex != string::npos)
 	{
-		lastIndex--;
-	}
-	bool wasSpace = true;
-	for (int i = 0; i <= lastIndex; i++)
-	{
-		if (arg[i] == ' ')
+		bool wasSpace = true;
+		for (size_t i = 0; i <= lastIndex; ++i)
 		{
-			if (!wasSpace)
+			if (arg[i] == ' ')
 			{
+				if (!wasSpace)
+				{
+					newString += arg[i];
+					wasSpace = true;
+				}
+			}
+			else
+			{
+				wasSpace = false;
 				newString += arg[i];
-				wasSpace = true;
 			}
 		}
-		else
-		{
-			wasSpace = false;
-			newString += arg[i];
-		}
 	}
+
 	return newString;
 }
