@@ -9,8 +9,9 @@ void Perform(vf &a)
 	}
 	auto res = minmax_element(a.begin(), a.end());
 	float min = *res.first, max = *res.second;
-	transform(a.begin(), a.end(), a.begin(), [min, max](float n) -> float
+	float product = min * max;
+	transform(a.begin(), a.end(), a.begin(), [product](float n) -> float
 	{
-		return (n < 0) ? n * min * max : n;
+		return (n < 0) ? n * product : n;
 	});
 }
