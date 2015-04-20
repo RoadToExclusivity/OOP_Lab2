@@ -6,10 +6,10 @@ using namespace std;
 int _tmain(int argc, _TCHAR* argv[])
 {
 	string s;
-	msi m;
+	WordOccurrences m;
 	while (getline(cin, s))
 	{
-		AddToMap(m, s);
+		AddStringOccurrence(m, s);
 	}
 	for (auto s : m)
 	{

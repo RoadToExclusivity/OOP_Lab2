@@ -1,5 +1,5 @@
 #include "stdafx.h"
 
-typedef std::map<std::string, int> msi;
+typedef std::map<std::string, int> WordOccurrences;
 
-void AddToMap(msi &m, std::string s);
+void AddStringOccurrence(WordOccurrences &occurrences, const std::string &s);

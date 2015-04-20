@@ -3,24 +3,24 @@
 
 using namespace std;
 
-void AddToMap(msi &m, string s)
+void AddStringOccurrence(WordOccurrences &occurrences, const string &s)
 {
-	string cur = "";
+	string word = "";
 	for (size_t i = 0; i < s.length(); i++)
 	{
 		if (s[i] == '\n' || s[i] == '\t' || s[i] == ' ')
 		{
-			if (cur.length() > 0)
+			if (word.length() > 0)
 			{
-				m[cur]++;
+				occurrences[word]++;
 			}
-			cur = "";
+			word = "";
 			continue;
 		}
-		cur += s[i];
+		word += s[i];
 	}
-	if (cur.length() > 0)
+	if (word.length() > 0)
 	{
-		m[cur]++;
+		occurrences[word]++;
 	}
 }
