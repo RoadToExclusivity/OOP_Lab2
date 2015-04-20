@@ -10,6 +10,6 @@ struct predicate_strsize_less
 	}
 };
 
-typedef std::map<std::string, std::string, predicate_strsize_less> mss;
+typedef std::map<std::string, std::string, predicate_strsize_less> WordAccordances;
 
-std::string ExpandTemplate(const std::string &tpl, const mss &params);
+std::string ExpandTemplate(const std::string &tpl, const WordAccordances &params);

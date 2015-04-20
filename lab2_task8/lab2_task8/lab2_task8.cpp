@@ -24,7 +24,7 @@ int main(int argc, char* argv[])
 		return 1;
 	}
 
-	mss replaceMap;
+	WordAccordances replaceMap;
 	for (int i = 3; i < argc; i += 2)
 	{
 		string sub = argv[i];
@@ -42,10 +42,6 @@ int main(int argc, char* argv[])
 	{
 		fout << ExpandTemplate(line, replaceMap) << endl;
 	}
-
-	replaceMap.clear();
-	fin.close();
-	fout.close();
 
 	return 0;
 }
