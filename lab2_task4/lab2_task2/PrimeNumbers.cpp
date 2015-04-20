@@ -1,9 +1,10 @@
 #include "stdafx.h"
 #include "PrimeNumbers.h"
 
-si GeneratePrimeNumbers(int upperBound)
+IntegerSet GeneratePrimeNumbers(int upperBound)
 {
-	si res;
+	IntegerSet res;
+
 	int *lowestPrime = new int[upperBound + 1];
 	memset(lowestPrime, 0, sizeof(int) * (upperBound + 1));
 	for (int i = 2; i <= upperBound; i++)
@@ -15,7 +16,7 @@ si GeneratePrimeNumbers(int upperBound)
 		}
 		for (int x : res)
 		{
-			if (x > lowestPrime[i] || (i * x > upperBound))
+			if (x > lowestPrime[i] || (1LL * i * x > upperBound))
 			{
 				break;
 			}
@@ -23,5 +24,6 @@ si GeneratePrimeNumbers(int upperBound)
 		}
 	}
 	delete[] lowestPrime;
+
 	return res;
 }

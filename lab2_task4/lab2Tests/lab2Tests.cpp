@@ -5,19 +5,19 @@ using namespace std;
 
 BOOST_AUTO_TEST_CASE(NoPrimeNumbers)
 {
-	si ans = GeneratePrimeNumbers(1);
+	IntegerSet ans = GeneratePrimeNumbers(1);
 	BOOST_CHECK(ans.size() == 0);
 }
 
 BOOST_AUTO_TEST_CASE(SomePrimeNumbers)
 {
-	si ans = GeneratePrimeNumbers(9);
-	si rightAns = { 2, 3, 5, 7 };
+	IntegerSet ans = GeneratePrimeNumbers(9);
+	IntegerSet rightAns = { 2, 3, 5, 7 };
 	BOOST_CHECK(ans == rightAns);
 }
 
-BOOST_AUTO_TEST_CASE(BigCountOfPrimeNumbers)
+BOOST_AUTO_TEST_CASE(BigCountOfPrimeNumbers) //First 500 prime numbers
 {
-	si ans = GeneratePrimeNumbers(3571);
+	IntegerSet ans = GeneratePrimeNumbers(3571);
 	BOOST_CHECK(ans.size() == 500);
 }

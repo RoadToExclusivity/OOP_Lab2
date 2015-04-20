@@ -1,5 +1,5 @@
 #pragma once
 
-typedef std::set<int> si;
+typedef std::set<int> IntegerSet;
 
-si GeneratePrimeNumbers(int upperBound);
+IntegerSet GeneratePrimeNumbers(int upperBound);

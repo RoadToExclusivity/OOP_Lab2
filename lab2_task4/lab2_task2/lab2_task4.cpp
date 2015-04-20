@@ -10,6 +10,7 @@ int main(int argc, char* argv[])
 		printf("Not enough arguments\n");
 		return 0;
 	}
+
 	char *pEnd;
 	int upperBound = strtol(argv[1], &pEnd, 10);
 	if (*pEnd != '\0' || !strlen(argv[1]))
@@ -17,11 +18,13 @@ int main(int argc, char* argv[])
 		printf("Wrong number\n");
 		return 1;
 	}
-	si ans = GeneratePrimeNumbers(upperBound);
+
+	IntegerSet ans = GeneratePrimeNumbers(upperBound);
 	for (int x : ans)
 	{
 		printf("%d ", x);
 	}
+
 	return 0;
 }
 
