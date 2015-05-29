@@ -11,6 +11,6 @@
 #include <string>
 #include <map>
 #include <vector>
-
+#include <algorithm>
 
 // TODO: Установите здесь ссылки на дополнительные заголовки, требующиеся для программы

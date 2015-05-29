@@ -56,3 +56,12 @@ BOOST_AUTO_TEST_CASE(TemplateWithMultipleChoice)
 	params["CC"] = "[cc]";
 	BOOST_CHECK_EQUAL(ExpandTemplate(tpl, params), "-[aa][bb][cc][cc][c][a][b][c]+");
 }
+
+BOOST_AUTO_TEST_CASE(Template)
+{
+	const string tpl = "{}{}{}{{}}";
+	WordAccordances params;
+	params["{}"] = "[";
+	params["}"] = "]";
+	BOOST_CHECK_EQUAL(ExpandTemplate(tpl, params), "[[[{[]");
+}
